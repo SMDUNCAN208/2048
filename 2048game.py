@@ -258,6 +258,10 @@ def drawBoard() :
     gameText = fontObjOne.render('2048', True, grey, None)
     SCREEN.blit(gameText, (25, 20))
 
+    undoText = fontObjThree.render('Backspace = Undo', True, grey, None)
+    SCREEN.blit(undoText, (15, 200))
+
+
     pygame.display.update()
 
 def setBoard():
@@ -281,7 +285,7 @@ def setBoard():
     drawScore()
 
 def drawScore():
-    pygame.draw.rect(SCREEN, margins, (0, 100, 200, 200))
+    pygame.draw.rect(SCREEN, margins, (0, 100, 200, 100))
     scoreText = fontObjTwo.render("Score: " + str(boardScore), True, grey)
     numberWidth = scoreText.get_width()
     SCREEN.blit(scoreText, ((extraSpace - numberWidth) / 2, 100))
